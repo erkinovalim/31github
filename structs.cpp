@@ -6,21 +6,23 @@ struct ChessMove
 {
     string pieceType;
     string startingSquare;
-    string TargetSquare;
+    string targetSquare;
     ChessMove(string pt, string ss, string ts)
     {
         pieceType = pt;
         startingSquare = ss;
-        TargetSquare = ts;
+        targetSquare = ts;
     }
-
+    
     string MoveNotation()
     {
-        pie
+        return pieceType[0] + targetSquare;
     }
-}
+};
 
-int
-main()
+int main()
 {
+    ChessMove move("King", "g4", "g5");
+    string notation = move.MoveNotation();
+    cout<<notation;
 }
