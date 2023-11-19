@@ -11,7 +11,7 @@ int main()
 {
     int a = 5;
     int b = 8;
-
+    // references are not variables
     int *ref = &a;
     *ref = 2;
     ref = &b;
