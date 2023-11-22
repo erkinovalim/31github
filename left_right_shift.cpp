@@ -18,6 +18,4 @@ int main()
     // binary right shift (x<<y) does this operation (x / 2^y)
 
     cout << a << endl;
-
-    return 0;
 }
