@@ -15,5 +15,5 @@ int main()
   int i;
   cin>>i;
 
-  cout<<getIthBit(int n, int i);
+  cout<<getIthBit(n, i);
 }
