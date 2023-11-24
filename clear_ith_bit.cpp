@@ -2,16 +2,20 @@
 
 using namespace std;
 
-void clearIthBit(int n, int i)
+void clearIthBit(int &n, int i)
 {
-    
+    int mask = ~(1 << i);
+
+    n = n & mask;
 }
 
 int main()
 {
-  int n = 5;
-  int i;
-  cin>>i;
+    int n = 5;
+    int i;
+    cin >> i;
 
-  cout<<clearIthBit(int n, int i);
+    clearIthBit(n, i);
+
+    cout << n;
 }
