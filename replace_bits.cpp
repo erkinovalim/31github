@@ -25,6 +25,6 @@ int main()
   int j = 3;
   int m = 2;
 
-  replaceBits(n,i, j,  m);
+  replaceBits(n,i, j, m);
     cout<<n;
 }
