@@ -4,7 +4,7 @@ using namespace std;
 
 void clearLastIBits(int &n, int i)
 {
-    int mask = ~(-1 << i);
+    int mask = (-1 << i);
 
     n = n & mask;
 }

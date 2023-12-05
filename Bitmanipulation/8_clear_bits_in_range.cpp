@@ -10,7 +10,7 @@ void clearBitsInRange(int &n, int i, int j)
 
   int mask = a|b;
 
-  return n&mask;
+  n = n & mask;
 }
 
 int main()
