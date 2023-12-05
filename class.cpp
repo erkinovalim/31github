@@ -7,7 +7,7 @@ class Book
 public:
     string name;
     int numberOfPages;
-};
+}; 
 
 int main()
 {
