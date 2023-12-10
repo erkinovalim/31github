@@ -3,8 +3,15 @@
 using namespace std;
 
 void factorise(int n)
-{
-    for (int i = 2; i <= n; i++)
+{   
+    /*
+    This loop will search for a factor till the square root of n, 
+    because one of the factors of a number always has to be
+    equal or smaller than than the square root of the number.
+
+    You can also do use sqrt(n) instead of i * i.
+    */
+    for (int i = 2; i * i <= n; i++)
     {
         if(n % i == 0)
         {
@@ -21,6 +28,8 @@ void factorise(int n)
         }
     }
     
+    if(n != 1)
+        cout<<n<<"^"<<1<<endl;
 }
 
 int main()

@@ -11,7 +11,7 @@ void primeSieve(vector<bool> &sieve)
         sieve[i] = true;
     }
 
-    for (long long int i = 3; i <= N; i++)
+    for (long long int i = 3; i * i <= N; i++)
     {
         if (sieve[i])
         {
