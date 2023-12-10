@@ -20,6 +20,6 @@ int main()
     Increment(a);
     Increment(b);
 
-    cout << a<<endl;
-    cout << b;
+    cout <<a<<endl;
+    cout <<b<<endl;
 }
