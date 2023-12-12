@@ -9,7 +9,7 @@ void factorise(int n)
     because one of the factors of a number always has to be
     equal or smaller than than the square root of the number.
 
-    You can also do use sqrt(n) instead of i * i.
+    You can also use sqrt(n) instead of i * i.
     */
     for (int i = 2; i * i <= n; i++)
     {

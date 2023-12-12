@@ -11,7 +11,7 @@ void primeSieve(vector<bool> &sieve)
         sieve[i] = true;
     }
 
-    for (long long int i = 3; i * i <= N; i++)
+    for (long long int i = 3; i <= N; i++)
     {
         if (sieve[i])
         {
@@ -25,14 +25,28 @@ void primeSieve(vector<bool> &sieve)
 
 int main()
 {
+    int q;
+
+    cin >> q;
     vector<bool> sieve(N + 1, 0);
 
     primeSieve(sieve);
 
-    for (int i = 0; i <= 10000; i++)
+    for (int i = 0; i < q; i++)
     {
-        if (sieve[i])
-            cout << i<< " ";
+        int n1, n2;
+
+        cin >> n1 >> n2;
+
+        int counter = 0;
+
+        for (int i = n1; i <= n2; i++)
+        {
+            if (sieve[i])
+                counter++;
+        }
+
+        cout << counter << endl;
     }
 
     return 0;
