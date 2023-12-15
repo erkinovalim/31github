@@ -1,19 +1,21 @@
 #include <bits/stdc++.h>
-
+#define N 1000000
 using namespace std;
 
 vector<int> primeSieve(vector<bool> sieve)
 {
     vector<int> lol;
+    lol.push_back(2);
 
     sieve[1] = sieve[0] = false;
     sieve[2] = true;
+
     for (int i = 3; i < sieve.size(); i += 2)
     {
         sieve[i] = true;
     }
 
-    for (long long int i = 3; i * i < sieve.size(); i++)
+    for (long long int i = 3; i < sieve.size(); i++)
     {
         if (sieve[i])
         {
@@ -35,28 +37,41 @@ int main()
 
     cin >> tests;
 
-    for (int i = 0; i < tests; i++)
+    vector<bool> sieve(N + 1, 0);
+
+    vector<int> primes = primeSieve(sieve);
+
+    int size = primes.size();
+
+    for (int k = 0; k < tests; k++)
     {
         long long int input;
 
         cin >> input;
 
-        vector<bool> sieve(sqrt(input) + 1, 1);
+        long long int root = sqrt(input);
 
-        vector<int> primes = primeSieve(sieve);
-        int counter = 0;
-        for (int k = 0; k < primes.size(); k++)
+        if (input < N)
         {
-            if (input % primes[k] == 0)
-                counter++;
-        }
-
-        if (counter > 0 && counter < 2)
-            for (int i = 0; i < primes.size(); i++)
+            if (root * root == input)
             {
-                cout << primes[i] << endl;
+                for (int i = 0; i < size; i++)
+                {
+                    if (primes[i] == root)
+                    {
+                        cout << "YES" << endl;
+                        break;
+                    }
+                    else if (primes[i] > root)
+                    {
+                        cout << "NO" << endl;
+                        break;
+                    }
+                }
             }
-
+            else
+                cout << "NO" << endl;
+        }
         else
         {
             cout << "NO" << endl;
